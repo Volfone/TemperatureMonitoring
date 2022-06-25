@@ -43,21 +43,21 @@ namespace TemperatureMonitoring
             this.date = DateConverter(date.Trim().Split('.', ' ', ':'));
         }
 
-        static FishInfo Converter(string fishType, string max, string min, string date, string temperature)
-        {
-            string[] values;
-            values = max.Trim().Split(" ");
-            int maxData = (int.Parse(values[0]));
-            int maxTimeData = (int.Parse(values[1]));
-            values = min.Trim().Split(" ");
-            int minData = (int.Parse(values[0]));
-            int minTimeData = (int.Parse(values[1]));
+        //static FishInfo Converter(string fishType, string max, string min, string date, string temperature)
+        //{
+        //    string[] values;
+        //    values = max.Trim().Split(" ");
+        //    int maxData = (int.Parse(values[0]));
+        //    int maxTimeData = (int.Parse(values[1]));
+        //    values = min.Trim().Split(" ");
+        //    int minData = (int.Parse(values[0]));
+        //    int minTimeData = (int.Parse(values[1]));
 
-            int[] temperatureData = TemperatureConverter(temperature);
-            DateTime dater = DateConverter(date.Trim().Split('.', ' ', ':'));
-            FishInfo fish = new FishInfo(fishType, maxData, maxTimeData, minData, minTimeData, dater, temperatureData);
-            return fish;
-        }
+        //    int[] temperatureData = TemperatureConverter(temperature);
+        //    DateTime dater = DateConverter(date.Trim().Split('.', ' ', ':'));
+        //    FishInfo fish = new FishInfo(fishType, maxData, maxTimeData, minData, minTimeData, dater, temperatureData);
+        //    return fish;
+        //}
 
         static int[] TemperatureConverter(string temperature)
         {
