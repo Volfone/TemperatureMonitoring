@@ -14,6 +14,7 @@ namespace TemperatureMonitoring
         DateTime date;
         int[] temperature;
         static List<string> DATA = new List<string>();
+        static List<string> oaoa = new List<string>();
 
         public FishInfo(string fishType, string max, string min, DateTime date, int[] temperature)
         {
