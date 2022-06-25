@@ -34,24 +34,28 @@ namespace TemperatureMonitoring
             this.SaveFile = new System.Windows.Forms.SaveFileDialog();
             this.FishHandlerControl = new System.Windows.Forms.TabControl();
             this.FishHandlerPage1 = new System.Windows.Forms.TabPage();
-            this.InfoTextBox = new System.Windows.Forms.RichTextBox();
             this.HandleDataBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.Temperatyre = new System.Windows.Forms.Label();
             this.TemperatureV = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.Date = new System.Windows.Forms.Label();
             this.DateV = new System.Windows.Forms.TextBox();
             this.FishHandlerPage2 = new System.Windows.Forms.TabPage();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.FilePathBtn = new System.Windows.Forms.Button();
+            this.Text = new System.Windows.Forms.Label();
+            this.FilePath = new System.Windows.Forms.TextBox();
             this.HandleFileBtn = new System.Windows.Forms.Button();
+            this.InfoTextBox = new System.Windows.Forms.RichTextBox();
             this.MinT = new System.Windows.Forms.TextBox();
             this.MinV = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.Time = new System.Windows.Forms.Label();
+            this.Temperature = new System.Windows.Forms.Label();
             this.MaxT = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.min = new System.Windows.Forms.Label();
+            this.max = new System.Windows.Forms.Label();
             this.MaxV = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.Fish = new System.Windows.Forms.Label();
             this.FishV = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,6 +65,7 @@ namespace TemperatureMonitoring
             this.FishHandlerPage1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.FishHandlerPage2.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,14 +91,6 @@ namespace TemperatureMonitoring
             this.FishHandlerPage1.Text = "DataHandler";
             this.FishHandlerPage1.UseVisualStyleBackColor = true;
             // 
-            // InfoTextBox
-            // 
-            this.InfoTextBox.Location = new System.Drawing.Point(246, 37);
-            this.InfoTextBox.Name = "InfoTextBox";
-            this.InfoTextBox.Size = new System.Drawing.Size(538, 196);
-            this.InfoTextBox.TabIndex = 2;
-            this.InfoTextBox.Text = "";
-            // 
             // HandleDataBtn
             // 
             this.HandleDataBtn.Location = new System.Drawing.Point(687, 42);
@@ -107,23 +104,23 @@ namespace TemperatureMonitoring
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Info;
-            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.Temperatyre);
             this.panel1.Controls.Add(this.TemperatureV);
-            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.Date);
             this.panel1.Controls.Add(this.DateV);
             this.panel1.Location = new System.Drawing.Point(6, 6);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(330, 66);
             this.panel1.TabIndex = 0;
             // 
-            // label5
+            // Temperatyre
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 39);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 15);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Temperature";
+            this.Temperatyre.AutoSize = true;
+            this.Temperatyre.Location = new System.Drawing.Point(12, 39);
+            this.Temperatyre.Name = "Temperatyre";
+            this.Temperatyre.Size = new System.Drawing.Size(73, 15);
+            this.Temperatyre.TabIndex = 9;
+            this.Temperatyre.Text = "Temperature";
             // 
             // TemperatureV
             // 
@@ -132,14 +129,14 @@ namespace TemperatureMonitoring
             this.TemperatureV.Size = new System.Drawing.Size(213, 23);
             this.TemperatureV.TabIndex = 8;
             // 
-            // label4
+            // Date
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(54, 10);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 15);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Date";
+            this.Date.AutoSize = true;
+            this.Date.Location = new System.Drawing.Point(54, 10);
+            this.Date.Name = "Date";
+            this.Date.Size = new System.Drawing.Size(31, 15);
+            this.Date.TabIndex = 7;
+            this.Date.Text = "Date";
             // 
             // DateV
             // 
@@ -150,6 +147,7 @@ namespace TemperatureMonitoring
             // 
             // FishHandlerPage2
             // 
+            this.FishHandlerPage2.Controls.Add(this.panel2);
             this.FishHandlerPage2.Controls.Add(this.HandleFileBtn);
             this.FishHandlerPage2.Location = new System.Drawing.Point(4, 24);
             this.FishHandlerPage2.Name = "FishHandlerPage2";
@@ -159,15 +157,60 @@ namespace TemperatureMonitoring
             this.FishHandlerPage2.Text = "FileHandler";
             this.FishHandlerPage2.UseVisualStyleBackColor = true;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.Info;
+            this.panel2.Controls.Add(this.FilePathBtn);
+            this.panel2.Controls.Add(this.Text);
+            this.panel2.Controls.Add(this.FilePath);
+            this.panel2.Location = new System.Drawing.Point(6, 6);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(407, 66);
+            this.panel2.TabIndex = 5;
+            // 
+            // FilePathBtn
+            // 
+            this.FilePathBtn.Location = new System.Drawing.Point(319, 28);
+            this.FilePathBtn.Name = "FilePathBtn";
+            this.FilePathBtn.Size = new System.Drawing.Size(75, 23);
+            this.FilePathBtn.TabIndex = 6;
+            this.FilePathBtn.Text = "Choose file";
+            this.FilePathBtn.UseVisualStyleBackColor = true;
+            this.FilePathBtn.Click += new System.EventHandler(this.FilePathBtn_Click);
+            // 
+            // Text
+            // 
+            this.Text.AutoSize = true;
+            this.Text.Location = new System.Drawing.Point(12, 31);
+            this.Text.Name = "Text";
+            this.Text.Size = new System.Drawing.Size(52, 15);
+            this.Text.TabIndex = 9;
+            this.Text.Text = "File path";
+            // 
+            // FilePath
+            // 
+            this.FilePath.Location = new System.Drawing.Point(81, 28);
+            this.FilePath.Name = "FilePath";
+            this.FilePath.Size = new System.Drawing.Size(213, 23);
+            this.FilePath.TabIndex = 8;
+            // 
             // HandleFileBtn
             // 
-            this.HandleFileBtn.Location = new System.Drawing.Point(668, 33);
+            this.HandleFileBtn.Location = new System.Drawing.Point(663, 37);
             this.HandleFileBtn.Name = "HandleFileBtn";
             this.HandleFileBtn.Size = new System.Drawing.Size(75, 23);
             this.HandleFileBtn.TabIndex = 4;
             this.HandleFileBtn.Text = "handle";
             this.HandleFileBtn.UseVisualStyleBackColor = true;
             this.HandleFileBtn.Click += new System.EventHandler(this.HandleFileBtn_Click);
+            // 
+            // InfoTextBox
+            // 
+            this.InfoTextBox.Location = new System.Drawing.Point(246, 37);
+            this.InfoTextBox.Name = "InfoTextBox";
+            this.InfoTextBox.Size = new System.Drawing.Size(538, 196);
+            this.InfoTextBox.TabIndex = 2;
+            this.InfoTextBox.Text = "";
             // 
             // MinT
             // 
@@ -183,23 +226,23 @@ namespace TemperatureMonitoring
             this.MinV.Size = new System.Drawing.Size(33, 23);
             this.MinV.TabIndex = 26;
             // 
-            // label6
+            // Time
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(137, 107);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(33, 15);
-            this.label6.TabIndex = 25;
-            this.label6.Text = "Time";
+            this.Time.AutoSize = true;
+            this.Time.Location = new System.Drawing.Point(137, 107);
+            this.Time.Name = "Time";
+            this.Time.Size = new System.Drawing.Size(33, 15);
+            this.Time.TabIndex = 25;
+            this.Time.Text = "Time";
             // 
-            // label7
+            // Temperature
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(57, 107);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 15);
-            this.label7.TabIndex = 24;
-            this.label7.Text = "Temperature";
+            this.Temperature.AutoSize = true;
+            this.Temperature.Location = new System.Drawing.Point(57, 107);
+            this.Temperature.Name = "Temperature";
+            this.Temperature.Size = new System.Drawing.Size(73, 15);
+            this.Temperature.TabIndex = 24;
+            this.Temperature.Text = "Temperature";
             // 
             // MaxT
             // 
@@ -208,23 +251,23 @@ namespace TemperatureMonitoring
             this.MaxT.Size = new System.Drawing.Size(33, 23);
             this.MaxT.TabIndex = 23;
             // 
-            // label3
+            // min
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 157);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(28, 15);
-            this.label3.TabIndex = 22;
-            this.label3.Text = "min";
+            this.min.AutoSize = true;
+            this.min.Location = new System.Drawing.Point(13, 157);
+            this.min.Name = "min";
+            this.min.Size = new System.Drawing.Size(28, 15);
+            this.min.TabIndex = 22;
+            this.min.Text = "min";
             // 
-            // label2
+            // max
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 128);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 15);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "max";
+            this.max.AutoSize = true;
+            this.max.Location = new System.Drawing.Point(13, 128);
+            this.max.Name = "max";
+            this.max.Size = new System.Drawing.Size(30, 15);
+            this.max.TabIndex = 21;
+            this.max.Text = "max";
             // 
             // MaxV
             // 
@@ -233,14 +276,14 @@ namespace TemperatureMonitoring
             this.MaxV.Size = new System.Drawing.Size(33, 23);
             this.MaxV.TabIndex = 20;
             // 
-            // label1
+            // Fish
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 84);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(28, 15);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "Fish";
+            this.Fish.AutoSize = true;
+            this.Fish.Location = new System.Drawing.Point(12, 84);
+            this.Fish.Name = "Fish";
+            this.Fish.Size = new System.Drawing.Size(28, 15);
+            this.Fish.TabIndex = 19;
+            this.Fish.Text = "Fish";
             // 
             // FishV
             // 
@@ -286,25 +329,26 @@ namespace TemperatureMonitoring
             this.Controls.Add(this.InfoTextBox);
             this.Controls.Add(this.MinT);
             this.Controls.Add(this.MinV);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.Time);
+            this.Controls.Add(this.Temperature);
             this.Controls.Add(this.MaxT);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.min);
+            this.Controls.Add(this.max);
             this.Controls.Add(this.MaxV);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Fish);
             this.Controls.Add(this.FishV);
             this.Controls.Add(this.FishHandlerControl);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.FishHandlerControl.ResumeLayout(false);
             this.FishHandlerPage1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.FishHandlerPage2.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -319,9 +363,9 @@ namespace TemperatureMonitoring
         private System.Windows.Forms.TabControl FishHandlerControl;
         private System.Windows.Forms.TabPage FishHandlerPage1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label Temperatyre;
         private System.Windows.Forms.TextBox TemperatureV;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label Date;
         private System.Windows.Forms.TextBox DateV;
         private System.Windows.Forms.TabPage FishHandlerPage2;
         private System.Windows.Forms.RichTextBox InfoTextBox;
@@ -329,17 +373,21 @@ namespace TemperatureMonitoring
         private System.Windows.Forms.Button HandleFileBtn;
         private System.Windows.Forms.TextBox MinT;
         private System.Windows.Forms.TextBox MinV;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label Time;
+        private System.Windows.Forms.Label Temperature;
         private System.Windows.Forms.TextBox MaxT;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label min;
+        private System.Windows.Forms.Label max;
         private System.Windows.Forms.TextBox MaxV;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label Fish;
         private System.Windows.Forms.TextBox FishV;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private Panel panel2;
+        private Button FilePathBtn;
+        private Label Text;
+        private TextBox FilePath;
     }
 }
 

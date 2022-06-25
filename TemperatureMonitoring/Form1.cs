@@ -45,12 +45,12 @@ namespace TemperatureMonitoring
             string dateData = "";
             string temperatureData = "";
             string str;
-            string path = ""; 
+            string path = FilePath.Text; 
 
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            if (OpenFile.ShowDialog() == DialogResult.OK)
+            if(path == null)
             {
-                path = OpenFile.FileName;
+                MessageBox.Show("Wrong path");
+                return;
             }
 
             using (StreamReader reader = new StreamReader(path, false))
@@ -93,16 +93,18 @@ namespace TemperatureMonitoring
             }
             using (StreamWriter writer = new StreamWriter(path, false))
             {
-                string fishInfo = ($"{FishV.Text}, {MaxV.Text}, {MaxT.Text}, {MinV.Text}, {MinT.Text}\n{InfoTextBox.Text}");
+                string fishInfo = ($"Fish: {FishV.Text};\nmax temperature: {MaxV.Text}, {MaxT.Text} minutes;\nmin temperature: {MinV.Text}, {MinT.Text} minutes;\n{InfoTextBox.Text}");
                 writer.WriteLine(fishInfo);
             }
         }
 
-        //private void saveToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    OpenFileDialog openFileDialog = new OpenFileDialog();
-        //    if (openFileDialog.ShowDialog() == true)
-        //        txtEditor.Text = File.ReadAllText(openFileDialog.FileName);
-        //}
+        private void FilePathBtn_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (OpenFile.ShowDialog() == DialogResult.OK)
+            {
+                FilePath.Text = OpenFile.FileName;
+            }
+        }
     }
 }

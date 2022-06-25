@@ -28,6 +28,7 @@ namespace TemperatureMonitoring
             this.date = date;
             this.temperature = temperature;
         }
+
         public FishInfo(string fishType, string max, string maxTime, string min, string minTime, string date, string temperature)
         {
             string[] values;
@@ -42,22 +43,6 @@ namespace TemperatureMonitoring
             this.temperature = TemperatureConverter(temperature);
             this.date = DateConverter(date.Trim().Split('.', ' ', ':'));
         }
-
-        //static FishInfo Converter(string fishType, string max, string min, string date, string temperature)
-        //{
-        //    string[] values;
-        //    values = max.Trim().Split(" ");
-        //    int maxData = (int.Parse(values[0]));
-        //    int maxTimeData = (int.Parse(values[1]));
-        //    values = min.Trim().Split(" ");
-        //    int minData = (int.Parse(values[0]));
-        //    int minTimeData = (int.Parse(values[1]));
-
-        //    int[] temperatureData = TemperatureConverter(temperature);
-        //    DateTime dater = DateConverter(date.Trim().Split('.', ' ', ':'));
-        //    FishInfo fish = new FishInfo(fishType, maxData, maxTimeData, minData, minTimeData, dater, temperatureData);
-        //    return fish;
-        //}
 
         static int[] TemperatureConverter(string temperature)
         {
@@ -114,43 +99,6 @@ namespace TemperatureMonitoring
             return text;
         }
 
-
-        //static void Load(string path)
-        //{
-        //    foreach (var file in Directory.GetFiles(path, "*.txt*"))
-        //    {
-        //        Console.WriteLine(file);
-        //        DATA.Add(file);
-        //        using (StreamReader reader = new StreamReader(file, false))
-        //        {
-        //            string str = reader.ReadLine();
-        //            while (str != null)
-        //            {
-        //                try
-        //                {
-        //                    Converter(str);
-        //                }
-        //                catch
-        //                {
-        //                    str = reader.ReadLine();
-        //                }
-        //                str = reader.ReadLine();
-        //            }
-        //        }
-        //    }
-        //}
-
-        //static void Save(string path)
-        //{
-        //    using (StreamWriter writer = new StreamWriter(path, false))
-        //    {
-        //        foreach (var item in DATA)
-        //        {
-        //            writer.WriteLine(item);
-        //        }
-        //    }
-        //}
-
         static DateTime DateConverter(string[] str)
         {
             int[] nums = new int[6];
@@ -171,10 +119,6 @@ namespace TemperatureMonitoring
             {
                 fishInfo += i + ", ";
             }
-            //foreach(int i in this.temperature)
-            //{
-            //    fishInfo += i + ", ";
-            //}
             return fishInfo;
         }
     }
