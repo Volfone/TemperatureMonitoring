@@ -56,5 +56,11 @@ namespace TemperatureMonitoring
         {
 
         }
+
+        private void HandleDataBtn_Click(object sender, EventArgs e)
+        {
+            FishInfo fish = new FishInfo(FishV.Text, MaxV.Text, MaxT.Text, MinV.Text, MinT.Text, DateV.Text, TemperatureV.Text);
+            InfoTextBox.Text = fish.Check();
+        }
     }
 }
