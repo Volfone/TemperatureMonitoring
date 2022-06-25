@@ -42,8 +42,8 @@ namespace TemperatureMonitoring
 
         private void HandleFileBtn_Click(object sender, EventArgs e)
         {
-            string dateData;
-            string temperatureData;
+            string dateData = "";
+            string temperatureData = "";
             string str;
             string path = ""; 
 
@@ -56,19 +56,31 @@ namespace TemperatureMonitoring
             using (StreamReader reader = new StreamReader(path, false))
             {
                 str = reader.ReadLine();
-                dateData = str;
-                str = reader.ReadLine();
-                temperatureData = str;
-                MessageBox.Show("asd");
-                //try
-                //{
-                    FishInfo fish = new FishInfo(FishV.Text, MaxV.Text, MaxT.Text, MinV.Text, MinT.Text, dateData, temperatureData);
-                    InfoTextBox.Text = fish.Check();
-                //}
-                //catch (Exception)
-                //{
-                //    MessageBox.Show("Wrong data");
-                //}
+                while (str != null)
+                {
+                    try
+                    {
+                        if(str.Length < 18)
+                        {
+                            dateData = str;
+                        }
+                        else
+                        {
+                            temperatureData = str;
+                        }
+                    }
+                    catch
+                    {
+                        str = reader.ReadLine();
+                    }
+                    str = reader.ReadLine();
+                }
+                FishInfo fish = new FishInfo(FishV.Text, MaxV.Text, MaxT.Text, MinV.Text, MinT.Text, dateData, temperatureData);
+                InfoTextBox.Text = fish.Check();
+                if (InfoTextBox.Text.Length > 15)
+                {
+                    MessageBox.Show("нарушении условий хранения рыбы");
+                }
             }
         }
 
@@ -81,7 +93,7 @@ namespace TemperatureMonitoring
             }
             using (StreamWriter writer = new StreamWriter(path, false))
             {
-                string fishInfo = ($"{FishV.Text}, {MaxV.Text}, {MaxT.Text}, {MinV.Text}, {MinT.Text} \n {InfoTextBox.Text}");
+                string fishInfo = ($"{FishV.Text}, {MaxV.Text}, {MaxT.Text}, {MinV.Text}, {MinT.Text}\n{InfoTextBox.Text}");
                 writer.WriteLine(fishInfo);
             }
         }
